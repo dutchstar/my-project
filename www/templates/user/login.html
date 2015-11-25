@@ -1,0 +1,39 @@
+<ion-modal-view>
+  
+  <ion-header-bar class="bar-energized">
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    
+    <div class="list">
+      
+      <form ng-submit="doLogin()">
+        <label class="item item-input">
+            <span class="input-label">E-mail</span>
+            <input type="email" ng-model="loginData.userEmail">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="loginData.userPassword">
+        </label>
+        <label class="item">
+            <button class="button button-block button-energized" type="submit">Log in</button>
+        </label>
+      </form>
+      
+      <div class="row">
+        <div class="col center-hor">
+          <a ng-click="openSignUp();"><strong>Sign up</strong></a>
+        </div>
+        <div class="col center-hor">
+          <a ng-click="openChangePassword();"><strong>Forgot password?</strong></a>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-modal-view>

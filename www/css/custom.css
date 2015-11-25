@@ -1,0 +1,10 @@
+/* Empty. Add your own CSS if you like */
+.profile-picture {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.center-hor {
+    text-align: center;
+}

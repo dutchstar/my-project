@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-energized">
+        <h1 class="title">New Post</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeMessageCreate()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list" data-ng-controller="MessageCtrl">
+            <form data-ng-submit="addMessage(message.userId, message.message_value)">
+                <!-- username should be pre-filled with the current user that is logged in -->
+                <!-- also this field should be hidden so its only a text area for the message -->
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input data-ng-model="message.userId" type="text" placeholder="username should be here">
+                </label>
+                <label class="item item-input">
+                    <input type="text" data-ng-model="message.text" placeholder="Write a message...">
+                </label>
+                <button class="button button-block button-energized" type="submit">Submit</button>
+            </form>
+        </div>
+    </ion-content>
+</ion-modal-view>

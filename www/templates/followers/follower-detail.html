@@ -1,0 +1,17 @@
+<ion-view view-title="{{FollowingProfiles[fid].displayName}}">
+  <ion-content class="padding center-hor">
+    
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    
+    
+    <img ng-src="{{FollowingProfiles[fid].profilePicture || tempData.noProfilePicture}}" class="profile-picture">
+    <p>@{{FollowingProfiles[fid].userName}}</p>
+    <p>Hi there! My name is {{FollowingProfiles[fid].displayName}}</p>
+    
+    
+    
+  </ion-content>
+</ion-view>

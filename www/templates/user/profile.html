@@ -1,0 +1,54 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-dark">
+    <div class="buttons">
+      <button class="button button-clear" data-ng-click="signOut()">Sign out</button>
+    </div>
+    <h1 class="title">Profile</h1>
+    <div class="buttons">
+      <button class="button button-clear" data-ng-click="closeProfile()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    
+    <div style="width: 100vw; text-align: center; margin: 20px 0px">
+      <a data-ng-click="editProfilePicture()">
+        <img 
+          style="height: 100px; width: 100px; border-radius: 50%"
+          data-ng-src="{{userData.profilePicture || tempData.noProfilePicture}}">
+      </a>
+    </div>
+    
+    <ion-list>
+      
+      <ion-item ng-click="editProfilePicture()">
+        Profile picture
+      </ion-item>
+      
+      <ion-item ng-click="editDisplayName()">
+        Display name
+        <span class="item-note">
+          {{userData.displayName}}
+        </span>
+      </ion-item>
+      
+      <ion-item ng-click="editUserName()">
+        Username
+        <span class="item-note">
+          {{userData.userName}}
+        </span>
+      </ion-item>
+
+      <ion-item ng-click="openChangeEmail()">
+        E-mail
+        <span class="item-note">
+          {{authData.password.email}}
+        </span>
+      </ion-item>
+      
+      <ion-item ng-click="openChangePassword()">
+        Change password
+      </ion-item>
+      
+    </ion-list>
+  </ion-content>
+</ion-modal-view>

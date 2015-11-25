@@ -1,0 +1,43 @@
+{
+  "rules": {
+    
+    "users": {
+      "$uid": {
+        // grants write access to the owner of this user account whose uid must exactly match the key ($uid)
+        ".write": "auth !== null && auth.uid === $uid",
+        // grants read access to any user who is logged in --&& auth.provider === 'password'
+        ".read": "auth !== null"
+      }
+    },
+    
+    "usernames": {
+      "$userName": {
+        // grants write access to the owner of this user account whose uid must exactly match the key ($uid)
+        ".write": "root.child('usernames').child($userName).child('uid').val() == auth.uid || root.child('usernames').child($userName).child('uid').val() == null",
+        // grants read access to any user who is logged in --&& auth.provider === 'password'
+        ".read": "auth !== null"
+      }
+    },
+    
+    "following": {
+      "$uid": {
+        // grants write access to the owner of this user account whose uid must exactly match the key ($uid)
+        ".write": "auth !== null && auth.uid === $uid",
+        // grants read access to any user who is logged in --&& auth.provider === 'password'
+        ".read": "auth !== null"
+      }
+    },
+    
+    "followedBy": {
+      "$fid": {
+        "$uid": {
+          // grants write access to the owner of this user account whose uid must exactly match the key ($uid)
+          ".write": "auth !== null && auth.uid === $uid",
+          // grants read access to any user who is logged in --&& auth.provider === 'password'
+          ".read": "auth !== null"
+        }
+      }
+    }
+    
+  }
+}
