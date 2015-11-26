@@ -4,7 +4,7 @@ angular.module('starter.controllers-messages', [])
 	'MessageCtrl', function ($scope, $ionicModal, Messages) {
 
 		$scope.addMessage = function (message) {
-			Messages.addMessage(message.userId, message.text)
+			Messages.addMessage(message.userIdl, message.message_value)
 				.then(
 				function (success) {
 					alert('Success!');
